@@ -103,7 +103,7 @@ echo    git push origin main
 echo.
 echo 3. Actualizar el servidor (via SSH):
 echo    ssh -i ~/.ssh/jg_server_key root@143.110.130.78
-echo    cd /opt/lagudi/server
+echo    cd /opt/lagudi/pdf-print-manager
 echo    git pull
 echo    systemctl restart jg-pdf-server
 echo.
