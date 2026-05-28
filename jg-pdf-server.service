@@ -1,0 +1,20 @@
+[Unit]
+Description=JG PDF Print Manager Server
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/lagudi/server
+Environment="PATH=/usr/local/bin:/usr/bin:/bin"
+ExecStart=/usr/bin/python3 /opt/lagudi/server/server_pdf.py
+Restart=always
+RestartSec=10
+
+# Logging
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=jg-pdf-server
+
+[Install]
+WantedBy=multi-user.target

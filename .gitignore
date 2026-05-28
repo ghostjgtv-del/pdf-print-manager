@@ -1,0 +1,63 @@
+# Archivos compilados y builds
+dist/
+build/
+*.exe
+*.spec
+
+# Instaladores generados
+installer/
+Output/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+*.egg-info/
+.pytest_cache/
+
+# Base de datos
+*.db
+*.sqlite
+*.sqlite3
+
+# Licencias y datos sensibles
+Licencias/
+licenses.json
+*.key
+*.pem
+
+# Logs
+*.log
+logs/
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Testing y desarrollo
+Test/
+tests/__pycache__/
+.coverage
+htmlcov/
+
+# Código viejo/deprecado
+pdf_print_manager/
+tools/
+
+# Temporal
+*.tmp
+*.bak
+*.old
