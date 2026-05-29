@@ -12,7 +12,7 @@ Sistema cliente-servidor para impresión batch de PDFs con gestión centralizada
 ```
 Cliente (Windows)              Servidor (DigitalOcean)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-impresion_pdf.exe         →    server_pdf.py
+PDF_Print_Manager.exe     →    server_pdf.py
   │                              │
   ├─ Impresión PDFs              ├─ FastAPI Server (Puerto 8001)
   ├─ Auto-update                 ├─ SQLite Database
@@ -24,53 +24,91 @@ impresion_pdf.exe         →    server_pdf.py
 
 ---
 
+## 📁 Estructura del Proyecto
+
+```
+C:\JG_Proyects\Impresion_PDFs\
+│
+├── 📱 Aplicación Cliente
+│   ├── main.py                    # Punto de entrada
+│   ├── app.py                     # Ventana principal
+│   ├── updater.py                 # Sistema de auto-update
+│   │
+│   ├── core/                      # Lógica de negocio
+│   │   ├── printer.py             # Gestión de impresoras
+│   │   ├── history.py             # Historial de trabajos
+│   │   └── scheduler.py           # Programación de tareas
+│   │
+│   ├── ui/                        # Interfaz de usuario
+│   │   ├── tab_queue.py           # Cola de impresión
+│   │   ├── tab_history.py         # Historial
+│   │   ├── tab_scheduler.py       # Programador
+│   │   ├── tab_settings.py        # Configuración
+│   │   └── sidebar.py             # Barra lateral
+│   │
+│   └── license/                   # Sistema de licencias
+│       ├── license_manager.py     # Validación con servidor
+│       └── license_window.py      # UI de activación
+│
+├── 🔧 Herramientas
+│   ├── server_pdf.py              # Servidor FastAPI
+│   ├── license_manager.py         # Generador de licencias
+│   │
+│   ├── compile_app.bat            # Compilar aplicación
+│   ├── compile_license_manager.bat # Compilar generador
+│   ├── publish_app.bat            # Publicar al servidor
+│   │
+│   └── installer_pdf.iss          # Instalador Inno Setup
+│
+├── 📦 Ejecutables
+│   └── dist/
+│       ├── PDF_Print_Manager.exe  # Aplicación (36 MB)
+│       └── Lagudi_License_Manager.exe # Generador (35 MB)
+│
+├── 📚 Documentación
+│   ├── README.md                  # Este archivo
+│   ├── DEPLOYMENT.md              # Guía de deployment
+│   ├── SETUP_POWERSHELL.md        # Guía PowerShell
+│   └── SETUP_CHECKLIST.md         # Checklist de setup
+│
+└── 🔧 Configuración
+    ├── requirements.txt           # Dependencias Python
+    ├── .gitignore                 # Archivos ignorados
+    └── jg-pdf-server.service      # Servicio systemd
+```
+
+---
+
 ## 🚀 Quick Start
 
 ### Desarrollo Local
 
 ```bash
-# Compilar aplicación
-.\compile_pdf.bat
+# Instalar dependencias
+pip install -r requirements.txt
 
-# Publicar al servidor
-.\publish_pdf_update.bat
+# Ejecutar aplicación
+python main.py
+```
 
-# Crear instalador
-"C:\Program Files (x86)\Inno Setup 6\ISCC.exe" installer_pdf.iss
+### Compilar Aplicación
+
+```bash
+# Compilar PDF Print Manager
+.\compile_app.bat
+
+# Compilar License Manager
+.\compile_license_manager.bat
 ```
 
 ### Deployment al Servidor
 
-Ver [DEPLOYMENT.md](DEPLOYMENT.md) para instrucciones completas de setup del servidor.
-
 ```bash
-# SSH al servidor
-ssh -i ~/.ssh/jg_server_key root@143.110.130.78
+# Publicar actualización
+.\publish_app.bat
 
-# Pull de actualizaciones
-cd /opt/lagudi/server
-git pull origin main
-
-# Restart servicio
-systemctl restart jg-pdf-server
-```
-
----
-
-## 📁 Estructura del Proyecto
-
-```
-.
-├── server_pdf.py              # FastAPI server backend
-├── Print_PDFs.ps1             # Aplicación cliente PowerShell
-├── compile_pdf.bat            # Compilar PS1 → EXE
-├── publish_pdf_update.bat     # Publicar al servidor
-├── installer_pdf.iss          # Inno Setup installer script
-├── jg-pdf-server.service      # Systemd service
-├── lagudi-logo.ico            # Icono de la aplicación
-├── DEPLOYMENT.md              # Guía completa de deployment
-├── SETUP_POWERSHELL.md        # Guía para PowerShell
-└── README_SERVER.md           # Documentación de arquitectura
+# O manualmente:
+scp -i ~/.ssh/jg_server_key dist/PDF_Print_Manager.exe root@143.110.130.78:/opt/lagudi/impresion_pdf/updates/impresion_pdf.exe
 ```
 
 ---
@@ -97,25 +135,25 @@ systemctl restart jg-pdf-server
 
 Ver guía completa en [DEPLOYMENT.md](DEPLOYMENT.md)
 
-**Requisitos:**
-- Ubuntu 20.04+ / Debian 11+
-- Python 3.10+
-- Puerto 8001 abierto
-
 **Instalación rápida:**
+
 ```bash
 # Clonar repo en el servidor
-cd /opt/lagudi/server
-git clone <repo-url> .
+cd /opt/lagudi
+git clone https://github.com/ghostjgtv-del/pdf-print-manager.git
 
 # Instalar dependencias
 pip3 install --break-system-packages fastapi uvicorn[standard] python-multipart
 
 # Configurar servicio
+cd pdf-print-manager
 cp jg-pdf-server.service /etc/systemd/system/
 systemctl daemon-reload
 systemctl enable jg-pdf-server
 systemctl start jg-pdf-server
+
+# Crear estructura de carpetas
+mkdir -p /opt/lagudi/impresion_pdf/{updates,installer}
 
 # Abrir puerto
 ufw allow 8001/tcp
@@ -128,25 +166,18 @@ ufw reload
 
 ### Actualizar aplicación:
 
-1. Editar `Print_PDFs.ps1`
-2. Incrementar versión
-3. Commit y push a GitHub
-4. Compilar: `.\compile_pdf.bat`
-5. Publicar: `.\publish_pdf_update.bat`
-6. Actualizar `APP_VERSION` en `server_pdf.py`
-7. Commit, push y pull en servidor
-8. Restart: `systemctl restart jg-pdf-server`
+1. Editar código en `core/`, `ui/`, etc.
+2. Compilar: `.\compile_app.bat`
+3. Publicar: `.\publish_app.bat`
+4. Commit y push a GitHub
+5. Pull en servidor y restart servicio
 
-### Actualizar solo el servidor:
+### Generar licencia:
 
-1. Editar `server_pdf.py`
-2. Commit y push a GitHub
-3. En el servidor:
-   ```bash
-   cd /opt/lagudi/server
-   git pull origin main
-   systemctl restart jg-pdf-server
-   ```
+1. Ejecutar: `dist\Lagudi_License_Manager.exe`
+2. Llenar formulario
+3. Copiar código generado
+4. Entregar a cliente
 
 ---
 
@@ -180,6 +211,8 @@ journalctl -u jg-pdf-server -f
 **Desarrollador:** Eng. Justo Torres  
 **Email:** ghost.jgtv@gmail.com  
 **Empresa:** Lagudis Fresh Food Group  
+**Servidor:** 143.110.130.78:8001  
+**GitHub:** https://github.com/ghostjgtv-del/pdf-print-manager
 
 ---
 

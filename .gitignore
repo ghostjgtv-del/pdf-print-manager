@@ -1,15 +1,16 @@
 # Archivos compilados y builds
-dist/
+dist/*.exe
+!dist/.gitkeep
 build/
-*.exe
 *.spec
+*.pyc
+__pycache__/
 
 # Instaladores generados
 installer/
 Output/
 
 # Python
-__pycache__/
 *.py[cod]
 *$py.class
 *.so
@@ -34,6 +35,8 @@ licenses.json
 # Logs
 *.log
 logs/
+*.new
+update.bat
 
 # Sistema operativo
 .DS_Store
@@ -47,17 +50,17 @@ desktop.ini
 *.swo
 *~
 
-# Testing y desarrollo
+# Testing
 Test/
 tests/__pycache__/
 .coverage
 htmlcov/
 
-# Código viejo/deprecado
-pdf_print_manager/
-tools/
-
 # Temporal
 *.tmp
 *.bak
 *.old
+tools/
+data/*.json
+data/*.dat
+.pdf_print_manager/

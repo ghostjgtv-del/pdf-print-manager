@@ -1,0 +1,142 @@
+═══════════════════════════════════════════════════════════
+  PDF PRINT MANAGER - QUICK INSTRUCTIONS
+  Lagudis Fresh Food Group
+  Developed by: Eng. Justo Torres
+═══════════════════════════════════════════════════════════
+
+📋 WHAT IS THIS APPLICATION?
+
+PDF Print Manager is a tool for batch printing multiple PDF
+files, scheduling future print jobs, and maintaining a complete
+history of all print operations.
+
+
+🚀 QUICK START
+
+1. Run PDF_Print_Manager.exe
+2. Enter license code (contact Eng. Justo Torres)
+3. Ready to use!
+
+
+🔑 ACTIVATION
+
+On first launch, a license code will be required:
+
+Format: LFFG-XXXX-XXXX-XXXX-XXXX
+
+To obtain your code, contact:
+  📧 ghost.jgtv@gmail.com
+  👤 Eng. Justo Torres
+
+
+📖 BASIC USAGE
+
+┌─────────────────────────────────────────────────────┐
+│ 1. PRINT FILES                                      │
+└─────────────────────────────────────────────────────┘
+
+  1️⃣  Click "➕ Add Files" or "📁 Add Folder"
+  2️⃣  Select printer from dropdown menu
+  3️⃣  Click "🖨️ Print All"
+  ✅  Done! Files will print automatically
+
+
+┌─────────────────────────────────────────────────────┐
+│ 2. SCHEDULE PRINTING                                │
+└─────────────────────────────────────────────────────┘
+
+  1️⃣  Add files to queue ("Print Queue" tab)
+  2️⃣  Go to "⏰ Scheduler" tab
+  3️⃣  Click "📋 Import Current Queue"
+  4️⃣  Enter name and date/time
+  5️⃣  Click "⏰ Schedule Job"
+
+  ⚠️  IMPORTANT: The app must remain open for
+      scheduled jobs to execute
+
+
+┌─────────────────────────────────────────────────────┐
+│ 3. VIEW HISTORY                                     │
+└─────────────────────────────────────────────────────┘
+
+  1️⃣  Go to "📊 History" tab
+  2️⃣  View all completed prints
+  3️⃣  Filter by date or status
+  4️⃣  Double-click any record for details
+  5️⃣  Export to CSV if needed
+
+
+🔧 ADDITIONAL FEATURES
+
+  • REORDER: Use ↑↓ to move files in queue
+  • REMOVE: Select a file and click "✖️ Remove"
+  • CLEAR: "🗑️ Clear Queue" to empty everything
+  • THEME: Switch dark/light in Settings
+
+
+⚙️ SETTINGS
+
+"⚙️ Settings" tab:
+
+  ✅ Default printer
+  ✅ Wait time between prints
+  ✅ Dark/light theme
+  ✅ View license information
+
+
+🐛 COMMON ISSUES
+
+┌─────────────────────────────────────────────────────┐
+│ ❌ No printers appear                               │
+└─────────────────────────────────────────────────────┘
+
+  Solution: Click 🔄 to refresh the list
+
+
+┌─────────────────────────────────────────────────────┐
+│ ❌ Print error                                      │
+└─────────────────────────────────────────────────────┘
+
+  Check:
+    • PDF file is not corrupted
+    • Printer is on and connected
+    • PDF viewer installed (Adobe Reader, Edge, etc.)
+
+
+┌─────────────────────────────────────────────────────┐
+│ ⚠️  License expiring                                │
+└─────────────────────────────────────────────────────┘
+
+  Contact Eng. Justo Torres for renewal
+
+
+┌─────────────────────────────────────────────────────┐
+│ ❌ Scheduled job didn't execute                     │
+└─────────────────────────────────────────────────────┘
+
+  Check:
+    • Application must remain open
+    • Date/time must be in future
+    • Review status in Scheduler tab
+
+
+📞 TECHNICAL SUPPORT
+
+  Eng. Justo Torres
+  Lagudis Fresh Food Group
+  📧 ghost.jgtv@gmail.com
+
+
+💡 TIPS
+
+  ✅ Keep your license code saved
+  ✅ App saves your settings automatically
+  ✅ History stored indefinitely (can be cleared)
+  ✅ Use subfolders when adding folders
+  ✅ Wait time prevents print queue overload
+
+
+═══════════════════════════════════════════════════════════
+  © 2026 Lagudis Fresh Food Group
+  All rights reserved
+═══════════════════════════════════════════════════════════

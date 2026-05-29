@@ -1,6 +1,6 @@
 @echo off
 REM ============================================================================
-REM Script de compilación para PDF Print Manager (Aplicación Python)
+REM Script de compilación para PDF Print Manager
 REM Author: Eng. Justo Torres - Lagudis Fresh Food Group
 REM ============================================================================
 
@@ -21,12 +21,10 @@ if %errorlevel% neq 0 (
 
 echo [1/4] Instalando dependencias...
 echo.
-cd pdf_print_manager
 pip install -r requirements.txt
 
 if %errorlevel% neq 0 (
     echo [ERROR] Falló la instalación de dependencias
-    cd ..
     pause
     exit /b 1
 )
@@ -44,7 +42,7 @@ echo.
 pyinstaller --onefile ^
     --windowed ^
     --name "PDF_Print_Manager" ^
-    --icon "..\lagudi-logo.ico" ^
+    --icon "lagudi-logo.ico" ^
     --hidden-import "win32timezone" ^
     --hidden-import "PIL._tkinter_finder" ^
     main.py
@@ -52,16 +50,14 @@ pyinstaller --onefile ^
 if %errorlevel% neq 0 (
     echo.
     echo [ERROR] La compilación falló
-    cd ..
     pause
     exit /b 1
 )
 
 echo.
-echo [4/4] Copiando a carpeta principal...
-copy /Y "dist\PDF_Print_Manager.exe" "..\dist\PDF_Print_Manager.exe" >nul
-
-cd ..
+echo [4/4] Limpiando archivos temporales...
+if exist "build" rmdir /s /q "build"
+if exist "PDF_Print_Manager.spec" del "PDF_Print_Manager.spec"
 
 echo.
 echo ============================================================================
