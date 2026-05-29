@@ -50,7 +50,7 @@ Name: "spanish"; MessagesFile: "compiler:Languages\Spanish.isl"
 
 [Tasks]
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"
-Name: "startmenu"; Description: "Create Start Menu shortcut"; GroupDescription: "{cm:AdditionalIcons}"; Flags: checked
+Name: "startmenu"; Description: "Create Start Menu shortcut"; GroupDescription: "{cm:AdditionalIcons}"
 
 [Files]
 ; Main executable
@@ -66,7 +66,7 @@ Source: "pdf_print_manager\INSTRUCTIONS.txt"; DestDir: "{app}"; Flags: ignorever
 [Icons]
 ; Start Menu shortcuts
 Name: "{group}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
-Name: "{group}\Instructions"; Filename: "{app}\INSTRUCTIONS.txt"; Flags: skipifsourcedoesntexist
+; Name: "{group}\Instructions"; Filename: "{app}\INSTRUCTIONS.txt"
 Name: "{group}\Uninstall {#MyAppName}"; Filename: "{uninstallexe}"
 
 ; Desktop shortcut (optional, selected during install)
