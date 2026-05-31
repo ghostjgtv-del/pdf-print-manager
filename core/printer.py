@@ -136,6 +136,30 @@ class PrinterManager:
             print(f"Error setting default printer: {e}")
             return False
 
+    def get_pdf_page_count(self, filepath: str) -> int:
+        """
+        Get the number of pages in a PDF file
+
+        Args:
+            filepath: Path to PDF file
+
+        Returns:
+            Number of pages (0 if unable to determine)
+        """
+        try:
+            from PyPDF2 import PdfReader
+            with open(filepath, 'rb') as f:
+                pdf = PdfReader(f)
+                num_pages = len(pdf.pages)
+                return num_pages if num_pages > 0 else 0
+        except ImportError:
+            # PyPDF2 not available
+            return 0
+        except Exception as e:
+            # Error reading PDF
+            print(f"Error reading page count for {filepath}: {e}")
+            return 0
+
     def print_pdf(self, filepath: str, printer_name: str = None) -> Tuple[bool, str]:
         """
         Genera archivo temporal PDF y lo envía a la impresora especificada.

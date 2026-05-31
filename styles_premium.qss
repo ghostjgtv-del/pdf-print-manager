@@ -1,0 +1,560 @@
+/* ============================================================================
+   PDF Print Manager - Premium Professional Styles
+   Ultra-Modern Design with Glassmorphism & Advanced Effects
+   Author: Eng. Justo Torres
+   ============================================================================ */
+
+/* ============================================================================
+   Main Window - Dark Premium Theme
+   ============================================================================ */
+QMainWindow {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+                                stop:0 #0a0e1a, stop:1 #1a1f2e);
+}
+
+/* ============================================================================
+   Sidebar - Glassmorphism Effect
+   ============================================================================ */
+#sidebar {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                stop:0 rgba(26, 31, 46, 0.95),
+                                stop:1 rgba(15, 20, 35, 0.95));
+    border-right: 1px solid rgba(100, 181, 246, 0.2);
+    min-width: 300px;
+    max-width: 300px;
+}
+
+#sidebarTitle {
+    color: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+                           stop:0 #64b5f6, stop:1 #1e88e5);
+    font-size: 32px;
+    font-weight: 800;
+    padding: 35px 25px 8px 25px;
+    font-family: 'Segoe UI', 'SF Pro Display', Arial, sans-serif;
+    letter-spacing: -0.5px;
+}
+
+#sidebarSubtitle {
+    color: rgba(176, 184, 196, 0.9);
+    font-size: 11px;
+    font-weight: 500;
+    padding: 0px 25px 25px 25px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+}
+
+#separator {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+                                stop:0 rgba(30, 136, 229, 0),
+                                stop:0.5 rgba(30, 136, 229, 0.8),
+                                stop:1 rgba(30, 136, 229, 0));
+    min-height: 2px;
+    max-height: 2px;
+    margin: 0px 25px 25px 25px;
+    border: none;
+}
+
+/* ============================================================================
+   Navigation Buttons - Premium Glassmorphism
+   ============================================================================ */
+QPushButton#navButton {
+    background: transparent;
+    border: 2px solid transparent;
+    border-radius: 14px;
+    color: rgba(176, 184, 196, 0.9);
+    font-size: 14px;
+    font-weight: 600;
+    padding: 18px 22px;
+    margin: 6px 18px;
+    text-align: left;
+    font-family: 'Segoe UI', 'SF Pro Display', Arial, sans-serif;
+}
+
+QPushButton#navButton:hover {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                stop:0 rgba(45, 53, 72, 0.7),
+                                stop:1 rgba(37, 43, 59, 0.5));
+    color: #ffffff;
+    border: 2px solid rgba(100, 181, 246, 0.3);
+}
+
+QPushButton#navButton:pressed {
+    background: rgba(37, 43, 59, 0.8);
+}
+
+QPushButton#navButton[active="true"] {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+                                stop:0 rgba(30, 136, 229, 0.85),
+                                stop:1 rgba(13, 71, 161, 0.85));
+    color: #ffffff;
+    border: 2px solid rgba(100, 181, 246, 0.6);
+    font-weight: 700;
+}
+
+/* ============================================================================
+   Content Area - Premium Gradient Background
+   ============================================================================ */
+#contentArea {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+                                stop:0 #0f1419, stop:1 #1a1f2e);
+    padding: 35px;
+}
+
+#pageTitle {
+    color: #ffffff;
+    font-size: 36px;
+    font-weight: 800;
+    margin-bottom: 12px;
+    font-family: 'Segoe UI', 'SF Pro Display', Arial, sans-serif;
+    letter-spacing: -0.8px;
+}
+
+#pageSubtitle {
+    color: rgba(176, 184, 196, 0.85);
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 35px;
+    letter-spacing: 0.3px;
+}
+
+/* ============================================================================
+   Cards - Glassmorphism with Glow
+   ============================================================================ */
+QFrame#card {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                stop:0 rgba(37, 43, 59, 0.7),
+                                stop:1 rgba(26, 31, 46, 0.7));
+    border: 1px solid rgba(100, 181, 246, 0.2);
+    border-radius: 20px;
+    padding: 28px;
+}
+
+QFrame#card:hover {
+    border: 1px solid rgba(100, 181, 246, 0.4);
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                stop:0 rgba(45, 53, 72, 0.75),
+                                stop:1 rgba(30, 36, 50, 0.75));
+}
+
+QLabel#cardTitle {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: -0.3px;
+}
+
+QLabel#cardSubtitle {
+    color: rgba(176, 184, 196, 0.8);
+    font-size: 14px;
+    margin-bottom: 18px;
+    letter-spacing: 0.2px;
+}
+
+/* ============================================================================
+   Buttons - Premium Gradient with Glow Effect
+   ============================================================================ */
+QPushButton {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                stop:0 #2196f3, stop:1 #1e88e5);
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 16px 32px;
+    font-family: 'Segoe UI', 'SF Pro Display', Arial, sans-serif;
+    letter-spacing: 0.5px;
+}
+
+QPushButton:hover {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                stop:0 #42a5f5, stop:1 #2196f3);
+}
+
+QPushButton:pressed {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                stop:0 #1976d2, stop:1 #0d47a1);
+    padding: 17px 31px 15px 33px;
+}
+
+QPushButton:disabled {
+    background: rgba(45, 53, 72, 0.5);
+    color: rgba(107, 114, 128, 0.7);
+}
+
+/* Primary Button - Electric Blue */
+QPushButton#primaryButton {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+                                stop:0 #2196f3, stop:1 #1e88e5);
+    font-size: 15px;
+    font-weight: 700;
+    padding: 18px 36px;
+    border: 2px solid rgba(100, 181, 246, 0.3);
+}
+
+QPushButton#primaryButton:hover {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+                                stop:0 #42a5f5, stop:1 #2196f3);
+    border: 2px solid rgba(100, 181, 246, 0.5);
+}
+
+/* Success Button - Emerald Green */
+QPushButton#successButton {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+                                stop:0 #10b981, stop:1 #059669);
+    border: 2px solid rgba(16, 185, 129, 0.3);
+}
+
+QPushButton#successButton:hover {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+                                stop:0 #34d399, stop:1 #10b981);
+    border: 2px solid rgba(16, 185, 129, 0.5);
+}
+
+/* Danger Button - Ruby Red */
+QPushButton#dangerButton {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+                                stop:0 #ef4444, stop:1 #dc2626);
+    border: 2px solid rgba(239, 68, 68, 0.3);
+}
+
+QPushButton#dangerButton:hover {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+                                stop:0 #f87171, stop:1 #ef4444);
+    border: 2px solid rgba(239, 68, 68, 0.5);
+}
+
+/* Secondary Button - Ghost Style */
+QPushButton#secondaryButton {
+    background: rgba(37, 43, 59, 0.5);
+    border: 2px solid rgba(100, 181, 246, 0.3);
+    color: rgba(176, 184, 196, 0.95);
+}
+
+QPushButton#secondaryButton:hover {
+    background: rgba(45, 53, 72, 0.7);
+    border: 2px solid rgba(100, 181, 246, 0.5);
+    color: #ffffff;
+}
+
+/* ============================================================================
+   Input Fields - Glassmorphism
+   ============================================================================ */
+QLineEdit, QTextEdit, QPlainTextEdit {
+    background: rgba(37, 43, 59, 0.6);
+    border: 2px solid rgba(61, 69, 88, 0.5);
+    border-radius: 12px;
+    color: #ffffff;
+    font-size: 14px;
+    padding: 14px 18px;
+    selection-background-color: rgba(30, 136, 229, 0.5);
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+QLineEdit:focus, QTextEdit:focus, QPlainTextEdit:focus {
+    border: 2px solid rgba(100, 181, 246, 0.8);
+    background: rgba(45, 53, 72, 0.7);
+}
+
+QLineEdit:hover, QTextEdit:hover, QPlainTextEdit:hover {
+    border: 2px solid rgba(61, 69, 88, 0.7);
+    background: rgba(37, 43, 59, 0.7);
+}
+
+QLineEdit::placeholder, QTextEdit::placeholder {
+    color: rgba(107, 114, 128, 0.7);
+}
+
+/* ============================================================================
+   ComboBox - Premium Style
+   ============================================================================ */
+QComboBox {
+    background: rgba(37, 43, 59, 0.6);
+    border: 2px solid rgba(61, 69, 88, 0.5);
+    border-radius: 12px;
+    color: #ffffff;
+    font-size: 14px;
+    padding: 14px 18px;
+    min-width: 220px;
+    font-weight: 600;
+}
+
+QComboBox:hover {
+    border: 2px solid rgba(61, 69, 88, 0.7);
+    background: rgba(37, 43, 59, 0.7);
+}
+
+QComboBox:focus {
+    border: 2px solid rgba(100, 181, 246, 0.8);
+}
+
+QComboBox::drop-down {
+    border: none;
+    width: 35px;
+}
+
+QComboBox::down-arrow {
+    image: none;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 7px solid rgba(176, 184, 196, 0.9);
+    margin-right: 12px;
+}
+
+QComboBox QAbstractItemView {
+    background: rgba(37, 43, 59, 0.95);
+    border: 2px solid rgba(100, 181, 246, 0.3);
+    border-radius: 12px;
+    color: #ffffff;
+    selection-background-color: rgba(30, 136, 229, 0.7);
+    padding: 10px;
+    outline: none;
+}
+
+QComboBox QAbstractItemView::item {
+    padding: 12px;
+    border-radius: 8px;
+    min-height: 20px;
+}
+
+QComboBox QAbstractItemView::item:hover {
+    background: rgba(45, 53, 72, 0.7);
+}
+
+QComboBox QAbstractItemView::item:selected {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+                                stop:0 rgba(30, 136, 229, 0.7),
+                                stop:1 rgba(13, 71, 161, 0.7));
+}
+
+/* ============================================================================
+   ScrollBar - Ultra Slim Premium
+   ============================================================================ */
+QScrollBar:vertical {
+    background: rgba(26, 31, 46, 0.3);
+    width: 12px;
+    border-radius: 6px;
+    margin: 0px;
+}
+
+QScrollBar::handle:vertical {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+                                stop:0 rgba(45, 53, 72, 0.7),
+                                stop:1 rgba(61, 69, 88, 0.7));
+    border-radius: 6px;
+    min-height: 30px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+                                stop:0 rgba(100, 181, 246, 0.5),
+                                stop:1 rgba(30, 136, 229, 0.5));
+}
+
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+    height: 0px;
+}
+
+QScrollBar:horizontal {
+    background: rgba(26, 31, 46, 0.3);
+    height: 12px;
+    border-radius: 6px;
+    margin: 0px;
+}
+
+QScrollBar::handle:horizontal {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                stop:0 rgba(45, 53, 72, 0.7),
+                                stop:1 rgba(61, 69, 88, 0.7));
+    border-radius: 6px;
+    min-width: 30px;
+}
+
+QScrollBar::handle:horizontal:hover {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                stop:0 rgba(100, 181, 246, 0.5),
+                                stop:1 rgba(30, 136, 229, 0.5));
+}
+
+/* ============================================================================
+   Table - Premium with Glassmorphism
+   ============================================================================ */
+QTableWidget, QTreeView {
+    background: rgba(26, 31, 46, 0.5);
+    alternate-background-color: rgba(31, 36, 51, 0.5);
+    border: 1px solid rgba(61, 69, 88, 0.3);
+    border-radius: 14px;
+    color: #ffffff;
+    gridline-color: rgba(45, 53, 72, 0.5);
+    selection-background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+                                                 stop:0 rgba(30, 136, 229, 0.6),
+                                                 stop:1 rgba(13, 71, 161, 0.6));
+    font-size: 13px;
+    font-weight: 500;
+}
+
+QTableWidget::item, QTreeView::item {
+    padding: 14px 10px;
+    border-bottom: 1px solid rgba(45, 53, 72, 0.3);
+}
+
+QTableWidget::item:hover, QTreeView::item:hover {
+    background: rgba(45, 53, 72, 0.5);
+}
+
+QTableWidget::item:selected, QTreeView::item:selected {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+                                stop:0 rgba(30, 136, 229, 0.7),
+                                stop:1 rgba(13, 71, 161, 0.7));
+    color: #ffffff;
+    font-weight: 600;
+}
+
+QHeaderView::section {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                stop:0 rgba(37, 43, 59, 0.9),
+                                stop:1 rgba(30, 36, 50, 0.9));
+    color: rgba(176, 184, 196, 0.95);
+    font-weight: 700;
+    font-size: 13px;
+    padding: 16px 10px;
+    border: none;
+    border-bottom: 3px solid rgba(30, 136, 229, 0.7);
+    border-right: 1px solid rgba(45, 53, 72, 0.4);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+QHeaderView::section:first {
+    border-top-left-radius: 14px;
+}
+
+QHeaderView::section:last {
+    border-top-right-radius: 14px;
+    border-right: none;
+}
+
+QHeaderView::section:hover {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                stop:0 rgba(45, 53, 72, 0.9),
+                                stop:1 rgba(37, 43, 59, 0.9));
+    color: #ffffff;
+}
+
+/* ============================================================================
+   ProgressBar - Premium Gradient
+   ============================================================================ */
+QProgressBar {
+    background: rgba(37, 43, 59, 0.7);
+    border: 2px solid rgba(61, 69, 88, 0.5);
+    border-radius: 10px;
+    height: 20px;
+    text-align: center;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 12px;
+}
+
+QProgressBar::chunk {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+                                stop:0 #2196f3, stop:0.5 #1e88e5, stop:1 #0d47a1);
+    border-radius: 8px;
+}
+
+/* ============================================================================
+   CheckBox & RadioButton - Modern Premium
+   ============================================================================ */
+QCheckBox, QRadioButton {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 14px;
+    font-weight: 500;
+    spacing: 12px;
+}
+
+QCheckBox::indicator, QRadioButton::indicator {
+    width: 22px;
+    height: 22px;
+    border: 2px solid rgba(61, 69, 88, 0.7);
+    border-radius: 7px;
+    background: rgba(37, 43, 59, 0.6);
+}
+
+QCheckBox::indicator:hover, QRadioButton::indicator:hover {
+    border: 2px solid rgba(100, 181, 246, 0.7);
+    background: rgba(45, 53, 72, 0.7);
+}
+
+QCheckBox::indicator:checked, QRadioButton::indicator:checked {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+                                stop:0 #2196f3, stop:1 #1e88e5);
+    border: 2px solid rgba(100, 181, 246, 0.8);
+}
+
+QRadioButton::indicator {
+    border-radius: 11px;
+}
+
+/* ============================================================================
+   ToolTip - Premium Glassmorphism
+   ============================================================================ */
+QToolTip {
+    background: rgba(37, 43, 59, 0.95);
+    color: #ffffff;
+    border: 1px solid rgba(100, 181, 246, 0.3);
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/* ============================================================================
+   Status Labels - Vibrant Colors
+   ============================================================================ */
+QLabel#statusSuccess {
+    color: #10b981;
+    font-weight: 700;
+}
+
+QLabel#statusWarning {
+    color: #f59e0b;
+    font-weight: 700;
+}
+
+QLabel#statusError {
+    color: #ef4444;
+    font-weight: 700;
+}
+
+QLabel#statusInfo {
+    color: #64b5f6;
+    font-weight: 700;
+}
+
+/* ============================================================================
+   Language Switcher Button
+   ============================================================================ */
+QPushButton#langButton {
+    background: rgba(37, 43, 59, 0.5);
+    border: 2px solid rgba(100, 181, 246, 0.2);
+    border-radius: 10px;
+    color: rgba(176, 184, 196, 0.9);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 10px 16px;
+    min-width: 50px;
+}
+
+QPushButton#langButton:hover {
+    background: rgba(45, 53, 72, 0.7);
+    border: 2px solid rgba(100, 181, 246, 0.4);
+    color: #ffffff;
+}
+
+QPushButton#langButton[active="true"] {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+                                stop:0 rgba(30, 136, 229, 0.7),
+                                stop:1 rgba(13, 71, 161, 0.7));
+    color: #ffffff;
+    border: 2px solid rgba(100, 181, 246, 0.5);
+}

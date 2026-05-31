@@ -42,9 +42,16 @@ echo.
 pyinstaller --onefile ^
     --windowed ^
     --name "PDF_Print_Manager" ^
-    --icon "lagudi-logo.ico" ^
+    --icon "app-icon.ico" ^
+    --add-data "logo-app.png;." ^
+    --add-data "app-icon.ico;." ^
+    --add-data "styles_saas_dark.qss;." ^
+    --add-data "styles_saas_light.qss;." ^
+    --add-data "translations.py;." ^
     --hidden-import "win32timezone" ^
-    --hidden-import "PIL._tkinter_finder" ^
+    --hidden-import "PyQt6.QtCore" ^
+    --hidden-import "PyQt6.QtGui" ^
+    --hidden-import "PyQt6.QtWidgets" ^
     main.py
 
 if %errorlevel% neq 0 (

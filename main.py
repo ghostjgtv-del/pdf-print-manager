@@ -1,13 +1,12 @@
 """
 PDF Print Manager
-Main Entry Point
+Main Entry Point - PyQt6 Version
 
 Author: Eng. Justo Torres
-Company: Lagudis Fresh Food Group
 Email: ghost.jgtv@gmail.com
 Date: May 2026
 
-Copyright © 2026 Lagudis Fresh Food Group
+Copyright © 2026 JG Software
 All rights reserved.
 """
 
@@ -19,14 +18,12 @@ if hasattr(sys, '_MEIPASS'):
     # Running in PyInstaller bundle
     os.chdir(sys._MEIPASS)
 
-from app import PDFPrintManagerApp
+from app_pyqt import main as app_main
 
 
-def main():
-    """Application entry point"""
+if __name__ == "__main__":
     try:
-        app = PDFPrintManagerApp()
-        app.run()
+        app_main()
     except KeyboardInterrupt:
         print("\nApplication interrupted by user")
         sys.exit(0)
