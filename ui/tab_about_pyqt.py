@@ -45,7 +45,16 @@ class AboutPage(QScrollArea):
         info_card_layout.setSpacing(24)
 
         # Logo Container with gradient background for contrast
-        logo_path = Path(__file__).parent.parent / "logo-app.png"
+        # Buscar logo en múltiples ubicaciones (desarrollo y compilado)
+        import sys
+        if getattr(sys, 'frozen', False):
+            # Cuando está compilado con PyInstaller
+            base_path = Path(sys._MEIPASS)
+            logo_path = base_path / "logo-app.png"
+        else:
+            # Cuando se ejecuta desde código fuente
+            logo_path = Path(__file__).parent.parent / "logo-app.png"
+
         if logo_path.exists():
             # Create dedicated frame for logo with gradient
             logo_container = QFrame()

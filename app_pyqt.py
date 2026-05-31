@@ -50,8 +50,13 @@ class PDFPrintManager(QMainWindow):
         self.setWindowTitle(t('app_name'))
         self.setMinimumSize(1500, 950)
 
-        # Set window icon
-        icon_path = Path(__file__).parent / "app_icon.ico"
+        # Set window icon (isolated para título de ventana)
+        if getattr(sys, 'frozen', False):
+            base_path = Path(sys._MEIPASS)
+        else:
+            base_path = Path(__file__).parent
+
+        icon_path = base_path / "icon_isolated.png"
         if icon_path.exists():
             self.setWindowIcon(QIcon(str(icon_path)))
 
